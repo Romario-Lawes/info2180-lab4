@@ -7,6 +7,7 @@ window.onload = function () {
 
   let wall = document.getElementsByClassName("boundary");
   let loseMsg = "";
+  let exampleWall = document.getElementsByClassName("example")[0];
 
   for (let i = 0; i < wall.length; i++) {
       wall[i].onmouseover = function () {
@@ -21,6 +22,14 @@ window.onload = function () {
     } else {
       alert("You Win!");
     }
+  };
+
+  document.getElementById("start").onclick = function () {
+    for (let i = 0; i < wall.length; i++) {
+      wall[i].className = "boundary";
+    }
+    exampleWall.className = "boundary example";
+    loseMsg = "";
   };
 
 };
