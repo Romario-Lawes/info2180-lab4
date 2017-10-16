@@ -6,11 +6,21 @@ window.onload = function () {
   };
 
   let wall = document.getElementsByClassName("boundary");
+  let loseMsg = "";
 
   for (let i = 0; i < wall.length; i++) {
       wall[i].onmouseover = function () {
         this.className += " youlose";
+        loseMsg = "You Lose!";
       };
   }
-  
+
+  document.getElementById("end").onmouseover = function () {
+    if (loseMsg === "You Lose!") {
+      alert(loseMsg);
+    } else {
+      alert("You Win!");
+    }
+  };
+
 };
