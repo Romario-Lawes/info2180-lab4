@@ -34,6 +34,14 @@ window.onload = function () {
     exampleWall.className = "boundary example";
     status.innerHTML = 'Move your mouse over the "S" to begin.';
     loseMsg = "";
+
+    document.getElementById('maze').onmouseleave = function () {
+      loseMsg = "You Lose!";
+      status.innerHTML = loseMsg;
+      for (let i = 0; i < wall.length; i++) {
+        wall[i].className += " youlose";
+      }
+    };
   };
 
 };
